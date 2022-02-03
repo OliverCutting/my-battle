@@ -9,7 +9,7 @@ class Player
   end
 
   def receives_damage
-    @hp -= 10
+    @hp -= rand(1..20)
   end
 
 end

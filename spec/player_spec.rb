@@ -12,6 +12,6 @@ describe Player do
   end
 
   it 'can receive damage' do
-    expect{subject.receives_damage}.to change{subject.hp}.by(-10)
+    expect{subject.receives_damage}.to change{subject.hp}.by_at_most(-1)
   end
 end

@@ -30,7 +30,16 @@ class Battle < Sinatra::Base
   get '/attack' do
     @game = $game
     $game.attack(@game.opposite_player)
+    
+    if @game.player1.hp <= 0 || @game.player2.hp <=0
+      redirect '/winner'
+    end
     erb(:attack)
+  end
+
+  get '/winner' do
+    @game = $game
+    erb(:winner)
   end
 
   # start the server if ruby file executed directly
